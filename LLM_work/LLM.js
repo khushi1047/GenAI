@@ -1,54 +1,53 @@
+// how google studio ai api used
+import { GoogleGenAI } from "@google/genai";
 
-// import { GoogleGenAI } from "@google/genai";
+const ai = new GoogleGenAI({ apiKey: "AIzaSyDXnwVSVZPUfevYGH8IzpKFXjRpoHPl5AI" });
 
-// const ai = new GoogleGenAI({ apiKey: "AIzaSyDXnwVSVZPUfevYGH8IzpKFXjRpoHPl5AI" });
-
-// async function main() {
-//   const response = await ai.models.generateContent({
-//     model: "gemini-3.0-flash-preview",
-//     contents: "Internal best city to witnessed during christmas",
-//   });
-//   console.log(response.text);
-// }
-// main();
+async function main() {
+  const response = await ai.models.generateContent({
+    model: "gemini-3.0-flash-preview",
+    contents: "Internal best city to witnessed during christmas",
+  });
+  console.log(response.text);
+}
+main();
 
 // ---------------------------------------------------------------------------------------------------------------------------------------------
+// To list the number of models
+import { GoogleGenAI } from "@google/genai";
 
-// import { GoogleGenAI } from "@google/genai";
+const client = new GoogleGenAI({ apiKey: "AIzaSyAZcLYFUVGUpHp56YGeMu79X9Kybyex0GQ"});
 
-// const client = new GoogleGenAI({ apiKey: "AIzaSyAZcLYFUVGUpHp56YGeMu79X9Kybyex0GQ"});
-
-// async function listModels() {
-//   const models = await client.models.list();
-//   console.log(models);
-// }
-
-// listModels();
+async function listModels() {
+  const models = await client.models.list();
+  console.log(models);
+}
+listModels();
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------
 
-// chatbot : manuak array + loop(readlinesync)
-// import {  GoogleGenAI } from "@google/genai";
-// import readlineSync from 'readline-sync'
-// const client = new GoogleGenAI({ apiKey: "AIzaSyAZcLYFUVGUpHp56YGeMu79X9Kybyex0GQ"});
-// const History = []
-// async function Chatting(user) {
-//     History.push({
-//         role :'user',
-//         parts:[{text:user}]
-//     })
-//   const response = await client.models.generateContent({
-//     model: "models/gemini-2.5-flash",
-//     contents:History
-// });
-// console.log(response.text);
-// }
-// async function main() {
-//    const user = readlineSync.question("Ask me anything-->")
-//    await Chatting(user)
-//    main()
-// }
-// main();
+// chatbot : manual array + loop(readlinesync)
+import {  GoogleGenAI } from "@google/genai";
+import readlineSync from 'readline-sync'
+const client = new GoogleGenAI({ apiKey: "AIzaSyAZcLYFUVGUpHp56YGeMu79X9Kybyex0GQ"});
+const History = []
+async function Chatting(user) {
+    History.push({
+        role :'user',
+        parts:[{text:user}]
+    })
+  const response = await client.models.generateContent({
+    model: "models/gemini-2.5-flash",
+    contents:History
+});
+console.log(response.text);
+}
+async function main() {
+   const user = readlineSync.question("Ask me anything-->")
+   await Chatting(user)
+   main()
+}
+main();
 
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
