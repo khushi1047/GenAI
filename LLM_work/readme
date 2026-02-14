@@ -1,0 +1,32 @@
+-> An LLM is an advanced AI model trained on massive amounts of text data so it can understand, generate, and reason with human language.
+These models learn patterns in language—grammar, facts, context, and even reasoning—by predicting the next word (token) in a sequence.
+
+-> A Large Language Model (LLM) is a deep learning model trained on massive text data to understand and generate human-like language.
+
+How does an LLM work?
+1) Training on huge datasets (books, articles, code, web text).
+2) Uses a Transformer neural network.
+3) Learns relationships between words using attention mechanisms.
+4) Generates responses based on probability and context.
+
+Popular examples of LLMs : GPT models (like ChatGPT) , BERT , LLaMA , Claude , Gemini.
+
+NOTE : a Pure LLM models predict the solution/response , they do not calculate it.
+
+-> For the problems whose answer a Pure LLM model can't predict , it takes help of external tools.these external tools can be a python code,web search,etc.
+-> an LLM model cannot run the code , it takes help from external sources for running the code.
+
+NOTE : a Pure LLM model can only predict the response/answer , and it can only predict the answer for the questions related to the data on which it is trained.
+
+-> “An LLM cannot answer real-time, private, future-certain, physically sensed, or ill-defined questions without external data or sufficient context.”
+
+Q) why are API keys used?
+ans) keys are used to track user activities.
+
+NOTE : a Pure LLM model do not stores previous contexts , it answers the questions based on current context only.
+
+-> the question you ask/prompt you give becomes the current context for your model.
+
+-> when we chat with chatgpt/gemini or any AI model , and we ask a question in the current chat , then the current question along with all previous questions and their answers become the context for the current question , hence it remebers our previously given information and answers accordingly.(basically a History is maintained)
+
+NOTE : when we interact with an LLM model using API keys , then it cannot use any External Tool.
